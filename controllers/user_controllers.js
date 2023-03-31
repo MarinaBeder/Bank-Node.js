@@ -32,6 +32,18 @@ const updateInformationById=(req,res)=>{
     res.send("information of this user is updated ");
 };
 
+const getUserByNationalId=(req,res)=>{
+  const user = users.find(c=>c.nationalId === parseInt(req.params.nationalId));
+console.log(req.params.nationalId);
+  if(!user){
+        res.status(404).send('This user doesnot exist ')
+    }
+    else{
+        res.send(user);
+
+    }
+
+};
  module.exports={
     getAllUsers,
     addUser,
