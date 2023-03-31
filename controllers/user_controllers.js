@@ -31,15 +31,6 @@ const updateInformationById=(req,res)=>{
 
     res.send("information of this user is updated ");
 };
-
- module.exports={
-       getAllUsers,
-       addUser,
-       updateInformationByNationalId,
-        getUserByNationalId,
-        deleteUserByNationalId,
-
-          };
 const deleteUserByNationalId=(req,res)=>{
     const user = users.find(c=>c.nationalId === parseInt(req.params.nationalId));
     if(!user){
@@ -49,3 +40,12 @@ const deleteUserByNationalId=(req,res)=>{
      users.splice(index,1);//delete one item
      res.send("user was deleted");
 }
+
+ module.exports={
+       getAllUsers,
+       addUser,
+       updateInformationByNationalId,
+        getUserByNationalId,
+        deleteUserByNationalId,
+
+          };
