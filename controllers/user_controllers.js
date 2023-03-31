@@ -33,7 +33,10 @@ const updateInformationById=(req,res)=>{
 };
 
  module.exports={
-    getAllUsers,
-    addUser,
-    updateInformationByNationalId
-       };
+       getAllUsers,
+       addUser,
+       getUserByNationalId,
+       deleteUserByNationalId,
+       updateInformationByNationalId
+       
+          };
