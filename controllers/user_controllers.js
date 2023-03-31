@@ -32,8 +32,9 @@ const updateInformationById=(req,res)=>{
     res.send("information of this user is updated ");
 };
 
- module.exports={
-    getAllUsers,
-    addUser,
-    updateInformationByNationalId
-       };
+module.exports={
+       getAllUsers,
+       addUser,
+       updateInformationByNationalId,
+        getUserByNationalId,
+          };
