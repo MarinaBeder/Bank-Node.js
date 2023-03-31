@@ -20,6 +20,7 @@ const user={
      users.push(user);
      res.send("this acoount is signup");
  };
+
 const updateInformationById=(req,res)=>{
     const user = users.find(c=>c.nationalId === parseInt(req.params.nationalId));
     if(!user){
@@ -31,7 +32,18 @@ const updateInformationById=(req,res)=>{
 
     res.send("information of this user is updated ");
 };
+const getUserByNationalId=(req,res)=>{
+  const user = users.find(c=>c.nationalId === parseInt(req.params.nationalId));
+console.log(req.params.nationalId);
+  if(!user){
+        res.status(404).send('This user doesnot exist ')
+    }
+    else{
+        res.send(user);
 
+    }
+
+};
  module.exports={
     getAllUsers,
     addUser,
