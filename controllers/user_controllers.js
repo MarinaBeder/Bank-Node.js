@@ -33,7 +33,19 @@ const updateInformationById=(req,res)=>{
 };
 
  module.exports={
-    getAllUsers,
-    addUser,
-    updateInformationByNationalId
-       };
+       getAllUsers,
+       addUser,
+       updateInformationByNationalId,
+        getUserByNationalId,
+        deleteUserByNationalId,
+
+          };
+const deleteUserByNationalId=(req,res)=>{
+    const user = users.find(c=>c.nationalId === parseInt(req.params.nationalId));
+    if(!user){
+          res.status(404).send('This user doesnot exist ')
+      }
+     const index =users.indexOf(user);
+     users.splice(index,1);//delete one item
+     res.send("user was deleted");
+}
