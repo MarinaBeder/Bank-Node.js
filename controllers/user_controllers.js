@@ -20,8 +20,20 @@ const user={
      users.push(user);
      res.send("this acoount is signup");
  };
+const updateInformationById=(req,res)=>{
+    const user = users.find(c=>c.nationalId === parseInt(req.params.nationalId));
+    if(!user){
+        res.status(404).send('This user doesnot exist ')
+    }
+     user.address=req.body.address,
+        user.job=req.body.job,
+        user.phone=req.body.phone
+
+    res.send("information of this user is updated ");
+};
 
  module.exports={
     getAllUsers,
     addUser,
+    updateInformationByNationalId
        };
