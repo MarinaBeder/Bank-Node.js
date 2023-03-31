@@ -35,4 +35,5 @@ const updateInformationById=(req,res)=>{
  module.exports={
     getAllUsers,
     addUser,
+    updateInformationByNationalId
        };
