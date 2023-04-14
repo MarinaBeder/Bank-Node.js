@@ -20,6 +20,7 @@ const deleteUserByNationalId= async(req,res)=>{
 };
 
 
+
 const addUser=async (req,res)=>{
     try {      
         const user =await User.create(req.body);
@@ -72,12 +73,29 @@ const updateInformationByNationalId= async(req,res)=>{
  
  
 };
+const getUserByNationalId = async(req,res)=>{
+ 
+    try {
+        const user= await User.findOne({nationalId:req.params.nationalId});
+        if(user==null){
+            res.status(404).send('user not found');
+    
+          }
+          else{res.status(200).send(user)};
+    
+        
+    } catch (error) {
+        res.status(400).send(error);
+    }
 
+
+};
 
 module.exports={
   addUser,
   updateInformationByNationalId,
    getAllUsers,
+   getUserByNationalId, 
     deleteUserByNationalId,
        
 };
