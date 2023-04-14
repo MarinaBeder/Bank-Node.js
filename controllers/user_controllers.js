@@ -1,5 +1,21 @@
 const {User} = require('../models/users');
 
+
+const addUser=async (req,res)=>{
+    try {      
+        const user =await User.create(req.body);
+
+  res.status(200).send(user);
+      
+  } catch (error) {
+      res.status(400).send(error);
+  }
+  
+
+ };
+
+
+      
 const updateInformationByNationalId= async(req,res)=>{
  
     try {
@@ -30,7 +46,8 @@ const updateInformationByNationalId= async(req,res)=>{
 };
 
 module.exports={
-
+  addUser,
   updateInformationByNationalId,
        
 };
+
