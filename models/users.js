@@ -1,28 +1,50 @@
-const users = [
-    {
-        id: 1,
-        nationalId: 11,
-        visaNumber: 11,
-        visaPassword: 11,
-        endVisa: 11,
-        balance: 500,
-        fullName:"Dina Mohamed",
-        address:"cairo",
-        job:"junior engineer",
-        phone:"012"
-
+const mongoose = require('mongoose');
+ 
+const userSchema=new mongoose.Schema({
+  
+    nationalId:{
+        type:Number,
+        required:true,
     },
-    { id: 1, nationalId: 12, visaNumber: 12, visaPassword: 11, endVisa: 11, balance: 600,
-        fullName:"Dina Mohamed",
-    address:"cairo",
-    job:"junior engineer",
-    phone:"012" },
-    { id: 1, nationalId: 13, visaNumber: 13, visaPassword: 11, endVisa: 11, balance: 600,
-        fullName:"Dina Mohamed",
-        address:"cairo",
-        job:"junior engineer",
-        phone:"012" },
+    visaNumber: {
+        type:Number,
+        required:true,
+    },
+    visaPassword: {
+        type:Number,
+        required:true,
+    },
+    endVisa: {
+        type:Date,
+        required:true,
+    },
+    balance:{
+        type:Number,
+        required:true,
+    },
+    phone:{
+        type:Number,
+        required:true,
+    },
+    fullName:{
+        type:String,
+        required:true,
+    },
+    address:{
+        type:String,
+        required:true,
+    },
+    job:{
+        type:String,
+        required:true,
+    },
+    
+  
+   
+});
+
+const User =mongoose.model('User',userSchema);
+
+module.exports={ User, };
 
 
-];
-module.exports = { users };
