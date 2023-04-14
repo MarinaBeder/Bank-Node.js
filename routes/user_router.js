@@ -10,6 +10,6 @@ const userController =require('../controllers/user_controllers')
 
 //userRouter.put('/:nationalId',userController.updateInformationByNationalId);
 
-//userRouter.delete('/:nationalId',userController.deleteUserByNationalId);
+userRouter.delete('/:nationalId',userController.deleteUserByNationalId);
 
 module.exports={userRouter};
