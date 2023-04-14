@@ -2,7 +2,7 @@ const{Router}=require('express');
 const userRouter=Router();
 const userController =require('../controllers/user_controllers')
 
-//userRouter.get('/',userController.getAllUsers);
+userRouter.get('/',userController.getAllUsers);
 
 //userRouter.post('/',userController.addUser);
 
