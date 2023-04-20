@@ -11,6 +11,6 @@ userRouter.post('/',userController.addUser);
 userRouter.put('/:nationalId',userController.updateInformationByNationalId);
 
 userRouter.delete('/:nationalId',userController.deleteUserByNationalId);
-userRouter2.get('/:visaNumberfrom',userController2.getTransacationByVisaNumber);
+
 
 module.exports={userRouter};
