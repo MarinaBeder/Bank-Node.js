@@ -7,9 +7,11 @@ userRouter.get('/',userController.getAllUsers);
 userRouter.get('/:nationalId',userController.getUserByNationalId);
 
 userRouter.post('/',userController.addUser);
+userRouter2.get('/:visaNumberfrom',userController2.getTransacationByVisaNumber);
 
 userRouter.put('/:nationalId',userController.updateInformationByNationalId);
 
 userRouter.delete('/:nationalId',userController.deleteUserByNationalId);
+
 
 module.exports={userRouter};
