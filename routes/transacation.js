@@ -4,6 +4,8 @@ const userController2 =require('../controllers/transacation')
 
 
 
+userRouter2.get('/:visaNumberfrom',userController2.getTransacationByVisaNumber);
+
 userRouter2.get('/amount/:amount',userController2.getAlltransactionEqualthatAmount);
 
 userRouter2.get('/',userController2.getAlltranscation);
