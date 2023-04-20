@@ -33,10 +33,7 @@ const getTransacationByVisaNumber = async(req,res)=>{//
 
 
 };
-module.exports={
-  getTransacationByVisaNumber,
-       
-};
+
 
 
 const getAlltransactionEqualthatAmount = async(req,res)=>{
@@ -128,5 +125,6 @@ module.exports={
   transacationOperation,
    getAlltranscation,
      getAlltransactionEqualthatAmount,
+   getTransacationByVisaNumber,
        };
 
